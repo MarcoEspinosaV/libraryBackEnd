@@ -1,0 +1,22 @@
+AppBundle\Entity\Author:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\AuthorRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: '50'
+    lastName:
+      type: string
+      length: '50'
+  manyToMany:
+    books:
+      targetEntity: AppBundle\Entity\Book
+      mappedBy: authors
+  lifecycleCallbacks: {  }
